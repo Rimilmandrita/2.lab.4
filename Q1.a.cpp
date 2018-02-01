@@ -22,7 +22,7 @@ class stackLL{
 	{
 	int value;
 	node *ptr=new node;
-	cout<<"\nPUSH Operationn";
+	cout<<"\nPUSH Operation\n";
 	cout<<"Enter a number to insert: ";
             cin>>value;
 	ptr->data=value;
