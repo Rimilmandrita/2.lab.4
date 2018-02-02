@@ -6,8 +6,8 @@ using namespace std;
 class Queue
 {
 private:
-  int A[MAX_SIZE];  // array to store the stack
-	int front,rear;   // variable to mark the front and rear of stack. 
+  int A[MAX_SIZE];  // array to store the Queue
+	int front,rear;   // variable to mark the front and rear of Queue 
 public:
 	// constructor
     Queue()
@@ -30,7 +30,7 @@ public:
 	void Delete() 
 	{
 		if(rear<front) 
-		{ // If stack is empty, pop should throw error. 
+		{ // If queue is empty, deletion should throw error. 
 			cout<<"Error: No element to delete\n";
 			return;
 		}
@@ -41,7 +41,7 @@ public:
  
 	
 	
-	// This will print all the elements in the stack at any stage. 
+	// This will print all the elements in the queue at any stage. 
 	void Print() {
 		int i;
 		cout<<"Queue: ";
@@ -54,11 +54,50 @@ public:
 int main()
 {
     // Code to test the implementation. 
-    // calling Print() after each push or pop to see the state of stack. 
-	Queue S;
-	S.Insert(2);S.Print();
-	S.Insert(5);S.Print();
-	S.Insert(10);S.Print();
-	S.Delete();S.Print();
-	S.Insert(12);S.Print();
+    
+	Queue s;
+	int choice,num;
+ while(1)
+        {
+      cout<<"------------------------------------\n";
+      cout<<"\n\t\t MENU\n\n";
+      cout<<"1:ADD, 2:REMOVE, 3:SHOW, 4:EXIT";
+      cout<<"\nChoose the menu: ";
+      cin>>choice;
+      cout<<choice<<endl;
+
+          switch(choice)
+          {
+               case 1: cout <<"Enter the element: ";
+  		 cin >> num;
+  		 cout<<num<<endl;
+  	             s.Insert(num);
+   	             break;
+               case 2: 
+               {
+               	s.Delete(); 
+               	cout<<"The element at front of queue is deleted.\n";
+                        break;
+               }
+               case 3: 
+               {
+               	s.Print(); break;
+               }
+               case 4:
+               {
+               
+               cout<<"EXIT";
+               exit(0);
+                break;
+               }
+
+            default:
+               {
+                cout<<"\nInvalid Input. Try again! \n";
+                break;
+               	
+               }
+        }
+    }
+    return 0;
 }
